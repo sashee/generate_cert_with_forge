@@ -55,7 +55,7 @@ export const generateCert = ({altNameIPs, altNameURIs, validityDays}) => {
 	};
 }
 
-const cert = generateCert({altNameIPs: ["127.0.0.2"], validityDays: 2});
+const cert = generateCert({altNameIPs: ["127.0.0.1", "127.0.0.2"], validityDays: 2});
 
 const app = https.createServer({key: cert.privateKey, cert: cert.cert}, async (req, res) => {
 	res.setHeader("Content-Type", "text/html");
